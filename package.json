@@ -1,5 +1,5 @@
 {
-    "name": "datatable",
+    "name": "m-m",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -10,7 +10,6 @@
         "@testing-library/react": "^11.2.3",
         "@testing-library/user-event": "^12.6.2",
         "bootstrap": "^4.6.0",
-        "file-saver": "^2.0.5",
         "react": "^17.0.1",
         "react-bootstrap": "^1.4.3",
         "react-csv": "^2.0.3",
@@ -19,11 +18,9 @@
         "react-icons": "^4.1.0",
         "react-scripts": "4.0.1",
         "styled-components": "^5.2.1",
-        "tabletop": "^1.6.3",
-        "web-vitals": "^0.2.4",
-        "xlsx": "^0.16.9"
+        "web-vitals": "^0.2.4"
     },
-    "homepage": "http://prueba.faya.com.ar/",
+    "homepage": "https://minusculasmayusculas.com/",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
