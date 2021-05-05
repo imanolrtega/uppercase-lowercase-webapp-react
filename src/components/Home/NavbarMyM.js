@@ -10,7 +10,7 @@ const NavbarMyM = () => {
       variant="dark">
       <Navbar.Brand href="#home">
         <a className="navbar-brand nav-dark" href="#">
-          <img className="logo" src="logo-minusculas-mayusculas.png"></img>
+          <img className="logo" src="logo-minusculas-mayusculas-1.png"></img>
         </a>
       </Navbar.Brand>
     </Navbar>

@@ -40,7 +40,7 @@ ul, li {
 
 .div-float {
     position: fixed !important;
-    padding-top: 5.8em;
+    padding-top: 6.8em;
     right: 0.9em;
     z-index: 2;
 }

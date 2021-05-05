@@ -1,18 +1,30 @@
 import React from "react";
 
+class AdComponent extends React.Component {
+  componentDidMount() {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }
+
+  render() {
+    return (
+      <ins
+        class="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-1205337443841472"
+        data-ad-slot="2985673020"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    );
+  }
+}
+
 const Main = () => {
   return (
     <div className="pt-5 pt-md-11">
       <div className="container">
-        <div className="row align-items-center m-3">
+        <div className="row align-items-center m-4 pt-3">
           <div className="col-12 col-md-5 col-lg-6 order-md-2">
-            <img
-              src="ads-google.jpg"
-              className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 aos-init aos-animate"
-              alt="..."
-              data-aos="fade-up"
-              data-aos-delay="100"
-            />
+            <AdComponent />
           </div>
           <div
             className="col-12 col-md-7 col-lg-6 order-md-1"
