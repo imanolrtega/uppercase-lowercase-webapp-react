@@ -1,22 +1,5 @@
-import React from "react";
-
-class AdComponent extends React.Component {
-  componentDidMount() {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  }
-
-  render() {
-    return (
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client="ca-pub-1205337443841472"
-        data-ad-slot="2985673020"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    );
-  }
-}
+import React, { lazy, Suspense } from "react";
+const AdGoogle = lazy(() => import("./../ads/AdGoogle"));
 
 const Main = () => {
   return (
@@ -24,7 +7,16 @@ const Main = () => {
       <div className="container">
         <div className="row align-items-center m-4 pt-3">
           <div className="col-12 col-md-5 col-lg-6 order-md-2">
-            <AdComponent />
+            <Suspense
+              fallback={
+                <div className="d-flex justify-content-center pt-4">
+                  <div className="spinner-border" role="status">
+                    <span className="sr-only">Cargando...</span>
+                  </div>
+                </div>
+              }>
+              <AdGoogle />
+            </Suspense>
           </div>
           <div
             className="col-12 col-md-7 col-lg-6 order-md-1"
