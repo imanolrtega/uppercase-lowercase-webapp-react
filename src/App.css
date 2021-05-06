@@ -47,6 +47,7 @@ ul, li {
 
 .nav-dark {
     background-color: #1A183B;
+    border-width: 0px;
 }
 
 .dropdown .btn {

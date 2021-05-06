@@ -43,7 +43,7 @@ const FormMyM = () => {
     <Fragment>
       <div className="card">
         <div className="card-body justify-content-center">
-          <p class="card-text text-center justify-content-center">
+          <div className="card-text text-center justify-content-center pb-3">
             <ul className="list-group">
               <li>
                 <strong>Mayúsculas al comienzo:</strong> Convierte a mayúsculas
@@ -62,7 +62,7 @@ const FormMyM = () => {
                 letra de cada palabra a mayúscula
               </li>
             </ul>
-          </p>
+          </div>
           <form className="row justify-content-center" onSubmit={submitPrevent}>
             <div className="form-group">
               <textarea
@@ -86,7 +86,7 @@ const FormMyM = () => {
 
               <div className="container mt-2 d-flex flex-row-reverse">
                 {alertCopy ? (
-                  <div class="alert alert-success" role="alert">
+                  <div className="alert alert-success" role="alert">
                     ¡Texto Copiado!
                   </div>
                 ) : (

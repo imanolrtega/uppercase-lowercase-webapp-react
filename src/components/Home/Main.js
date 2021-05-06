@@ -8,7 +8,7 @@ class AdComponent extends React.Component {
   render() {
     return (
       <ins
-        class="adsbygoogle"
+        className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client="ca-pub-1205337443841472"
         data-ad-slot="2985673020"

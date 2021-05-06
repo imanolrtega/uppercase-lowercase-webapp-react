@@ -10,7 +10,12 @@ const Footer = () => {
         <div className="row align-items-center no-gutters py-2">
           <div className="col-md-12 footer-av text-center">
             <span>
-              © 2021 Minúscula-Mayúscula. Sitio web creado por Imanol.
+              © 2021 Minúscula-Mayúscula. Sitio web creado por{" "}
+              <a
+                className="nav-link-footer"
+                href="https://github.com/imanolrtega">
+                <strong>Imanol</strong>
+              </a>
             </span>
           </div>
         </div>

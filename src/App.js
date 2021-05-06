@@ -1,11 +1,6 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import Main from "./components/Home/Main";
-import NavbarMyM from "./components/Home/NavbarMyM";
-import ScrollTop from "./components/ScrollTop/ScrollTop";
-import Footer from "./components/Home/Footer";
 
 import { ThemeProvider } from "styled-components";
 import { useDarkMode } from "./components/DarkMode/useDarkMode";
@@ -13,7 +8,12 @@ import { GlobalStyles } from "./components/DarkMode/Globalstyle";
 import { lightTheme, darkTheme } from "./components/DarkMode/Theme";
 import Toggle from "./components/DarkMode/Toggler";
 
-import FormMyM from "./components/Form/FormMyM";
+import NavbarMyM from "./components/Home/NavbarMyM";
+import ScrollTop from "./components/ScrollTop/ScrollTop";
+
+const Main = lazy(() => import("./components/Home/Main"));
+const FormMyM = lazy(() => import("./components/Form/FormMyM"));
+const Footer = lazy(() => import("./components/Home/Footer"));
 
 const App = () => {
   const [theme, toggleTheme, componentMounted] = useDarkMode();
@@ -33,10 +33,29 @@ const App = () => {
             <Toggle theme={theme} toggleTheme={toggleTheme} />
           </div>
           <div className="blank-container"></div>
-          <Main />
+
+          <Suspense
+            fallback={
+              <div className="d-flex justify-content-center pt-4">
+                <div className="spinner-border" role="status">
+                  <span className="sr-only">Cargando...</span>
+                </div>
+              </div>
+            }>
+            <Main />
+          </Suspense>
 
           <div className="container mb-3">
-            <FormMyM />
+            <Suspense
+              fallback={
+                <div className="d-flex justify-content-center pt-4">
+                  <div className="spinner-border" role="status">
+                    <span className="sr-only">Cargando...</span>
+                  </div>
+                </div>
+              }>
+              <FormMyM />
+            </Suspense>
           </div>
 
           <div>
@@ -44,7 +63,16 @@ const App = () => {
           </div>
 
           <div className="blank-container" id="footer"></div>
-          <Footer />
+          <Suspense
+            fallback={
+              <div className="d-flex justify-content-center pt-4">
+                <div className="spinner-border" role="status">
+                  <span className="sr-only">Cargando...</span>
+                </div>
+              </div>
+            }>
+            <Footer />
+          </Suspense>
         </div>
       </>
     </ThemeProvider>

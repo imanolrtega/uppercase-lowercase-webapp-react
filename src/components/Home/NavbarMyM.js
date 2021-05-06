@@ -9,9 +9,12 @@ const NavbarMyM = () => {
       className="navbar navbar-expand-md fixed-top nav-dark justify-content-center"
       variant="dark">
       <Navbar.Brand href="#home">
-        <a className="navbar-brand nav-dark" href="#">
-          <img className="logo" src="logo-minusculas-mayusculas-1.png"></img>
-        </a>
+        <button className="navbar-brand nav-dark">
+          <img
+            className="logo"
+            alt="logo-minuscula-mayuscula"
+            src="logo-minusculas-mayusculas-1.png"></img>
+        </button>
       </Navbar.Brand>
     </Navbar>
   );
