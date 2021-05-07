@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import DownloadButton from "./DownloadButton";
 
 const FormMyM = () => {
   const [words, setWords] = useState("");
@@ -67,14 +68,15 @@ const FormMyM = () => {
             <div className="form-group">
               <textarea
                 className="form-control p-2"
-                id="FormControlTextarea"
+                id="mainTextarea"
                 rows="5"
                 name="textArea"
                 placeholder="Ingrese aquí el texto"
                 onChange={handleInputChange}
                 value={words}></textarea>
 
-              <div className="container mt-2 d-flex flex-row-reverse">
+              <div className="container mt-2 d-flex justify-content-between">
+                {words ? <DownloadButton /> : ""}
                 {words ? (
                   <button className="btn btn-av-soft" onClick={copyButton}>
                     Copiar Texto

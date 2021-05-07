@@ -6,14 +6,13 @@ import { ThemeProvider } from "styled-components";
 import { useDarkMode } from "./components/DarkMode/useDarkMode";
 import { GlobalStyles } from "./components/DarkMode/Globalstyle";
 import { lightTheme, darkTheme } from "./components/DarkMode/Theme";
-import Toggle from "./components/DarkMode/Toggler";
-
-import NavbarMyM from "./components/Home/NavbarMyM";
-import ScrollTop from "./components/ScrollTop/ScrollTop";
 
 const Main = lazy(() => import("./components/Home/Main"));
+const NavbarMyM = lazy(() => import("./components/Home/NavbarMyM"));
+const Toggle = lazy(() => import("./components/DarkMode/Toggler"));
 const FormMyM = lazy(() => import("./components/Form/FormMyM"));
 const Footer = lazy(() => import("./components/Home/Footer"));
+const ScrollTop = lazy(() => import("./components/ScrollTop/ScrollTop"));
 
 const App = () => {
   const [theme, toggleTheme, componentMounted] = useDarkMode();
@@ -28,9 +27,27 @@ const App = () => {
       <>
         <GlobalStyles />
         <div className="container-fluid">
-          <NavbarMyM />
+          <Suspense
+            fallback={
+              <div className="d-flex justify-content-center pt-4">
+                <div className="spinner-border" role="status">
+                  <span className="sr-only">Cargando...</span>
+                </div>
+              </div>
+            }>
+            <NavbarMyM />
+          </Suspense>
           <div className="div-float">
-            <Toggle theme={theme} toggleTheme={toggleTheme} />
+            <Suspense
+              fallback={
+                <div className="d-flex justify-content-center pt-4">
+                  <div className="spinner-border" role="status">
+                    <span className="sr-only">Cargando...</span>
+                  </div>
+                </div>
+              }>
+              <Toggle theme={theme} toggleTheme={toggleTheme} />
+            </Suspense>
           </div>
           <div className="blank-container"></div>
 
@@ -59,7 +76,16 @@ const App = () => {
           </div>
 
           <div>
-            <ScrollTop />
+            <Suspense
+              fallback={
+                <div className="d-flex justify-content-center pt-4">
+                  <div className="spinner-border" role="status">
+                    <span className="sr-only">Cargando...</span>
+                  </div>
+                </div>
+              }>
+              <ScrollTop />
+            </Suspense>
           </div>
 
           <div className="blank-container" id="footer"></div>
