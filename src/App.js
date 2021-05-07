@@ -8,6 +8,7 @@ import { GlobalStyles } from "./components/DarkMode/Globalstyle";
 import { lightTheme, darkTheme } from "./components/DarkMode/Theme";
 
 const Main = lazy(() => import("./components/Home/Main"));
+const ExtraInfo = lazy(() => import("./components/Home/ExtraInfo"));
 const NavbarMyM = lazy(() => import("./components/Home/NavbarMyM"));
 const Toggle = lazy(() => import("./components/DarkMode/Toggler"));
 const FormMyM = lazy(() => import("./components/Form/FormMyM"));
@@ -72,6 +73,19 @@ const App = () => {
                 </div>
               }>
               <FormMyM />
+            </Suspense>
+          </div>
+
+          <div className="container mb-3">
+            <Suspense
+              fallback={
+                <div className="d-flex justify-content-center pt-4">
+                  <div className="spinner-border" role="status">
+                    <span className="sr-only">Cargando...</span>
+                  </div>
+                </div>
+              }>
+              <ExtraInfo />
             </Suspense>
           </div>
 
