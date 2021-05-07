@@ -86,10 +86,12 @@ const FormMyM = () => {
                 )}
               </div>
 
-              <div className="container mt-2 d-flex flex-row-reverse">
+              <div className="container-fluid d-flex justify-content-center">
                 {alertCopy ? (
-                  <div className="alert alert-success" role="alert">
-                    ¡Texto Copiado!
+                  <div className="div-float-alert">
+                    <div className="alert alert-success" role="alert">
+                      ¡Texto Copiado!
+                    </div>
                   </div>
                 ) : (
                   ""
