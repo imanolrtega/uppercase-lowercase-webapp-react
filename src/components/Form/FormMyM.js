@@ -5,21 +5,14 @@ const FormMyM = () => {
   const [words, setWords] = useState("");
   const [alertCopy, setAlertCopy] = useState(false);
 
-  const handleInputChange = (e) => {
-    setWords(e.target.value);
-  };
+  const handleInputChange = (e) => setWords(e.target.value);
 
-  const capitalize = () => {
+  const capitalize = () =>
     setWords(words.charAt(0).toUpperCase() + words.slice(1).toLowerCase());
-  };
 
-  const upper = () => {
-    setWords(words.toUpperCase());
-  };
+  const upper = () => setWords(words.toUpperCase());
 
-  const lower = () => {
-    setWords(words.toLowerCase());
-  };
+  const lower = () => setWords(words.toLowerCase());
 
   const capitalizeWords = () => {
     let txt = words.split(" ");
@@ -36,9 +29,7 @@ const FormMyM = () => {
     }, 2500);
   };
 
-  const submitPrevent = (e) => {
-    e.preventDefault();
-  };
+  const submitPrevent = (e) => e.preventDefault();
 
   return (
     <Fragment>

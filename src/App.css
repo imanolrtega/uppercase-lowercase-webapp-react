@@ -2,6 +2,7 @@
 html,
 body {
     font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
 }
 
 @supports (font-variation-settings: normal) {
